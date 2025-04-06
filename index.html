@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreamdrop - Urlaubsideen</title>
+    <link rel="icon" href="./app/icons/icon_accent_stars.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./app/css/stylesheet.css">
+    <script src="./app/js/app.js"></script>
+    <!-- OG META -->
+    <meta property="og:title" content="Dreamdrop - Urlaubsideen" />
+    <meta property="og:description" content="Dreamdrop ist eine Plattform, um Urlaubsideen zu teilen und zu entdecken." />
+    <meta property="og:image" content="https://riemerjonas.de/portfolios/dreamdrop/app/images/beach.jpg" />
+    <meta property="og:url" content="https://riemerjonas.de/portfolios/dreamdrop/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dreamdrop" />
+    <meta property="og:locale" content="de_DE" />
+</head>
+<body>
+    <header>
+        <h1>Dream<span>drop</span></h1>
+        <button class="button_primary" name="btn-create" onclick="togglePopup()"><img src="./app/icons/icon_light_stars.svg" alt="Add"> Neuen Dreamdrop</button>
+    </header>
+    <main>
+        <h2 style="margin-bottom: 2rem;">Geteilte Inhalte:</h2>
+        <section id="dreamdrop-list">
+            <div class="entry">
+                <img src="./app/icons/icon_accent_stars.svg" alt="" class="icon">
+                <p class="name">Dreamdrop von Anna</p>
+                <p class="drop">Anna hat den Dreamdrop <span>Beach Party</span> für <span>0€</span> in <span>Insel</span> erstellt.</p>
+                <button class="button_primary" style="width: 100%; margin-top: 1rem; justify-content: center;"><img src="./app/icons/icon_light_beach.svg" alt="beach"> Link öffnen</button>
+            </div>
+        </section>
+    </main>
+
+
+    <div class="popup-wrapper hidden" id="popup-wrapper">
+        <div class="popup">
+            <h2>Neuer Dreamdrop:</h2>
+            <p class="description">
+                Hier kannst du einen neuen Dreamdrop anlegen. Ein Dreamdrop ist eine Aktivität, ein Ort oder eine Idee, die du mit deinen Freunden teilen möchtest.
+            </p>
+            <form id="form_entry">
+                <div class="line">
+                    <label for="name">Name des Dreamdrops*:</label>
+                    <input type="text" id="name" name="name" placeholder="Beachbar XY" required>
+                </div>
+                <div class="line">
+                    <label for="location">Location des Dreamdrops:*</label>
+                    <input type="text" id="location" name="location" placeholder="Insel Magic" required>
+                </div>
+                <div class="line">
+                    <label for="price">Kostenfaktor:</label>
+                    <input type="text" id="price" name="price" placeholder="3,50€" required>
+                </div>
+                <div class="line">
+                    <label for="url">URL zum Dreamdrop:</label>
+                    <input type="url" id="url" name="url" placeholder="https://www.example.com" required>
+                </div>
+                <div class="line">
+                    <label for="author">Dein Name:*</label>
+                    <input type="text" id="author" name="author" placeholder="Maxi Müller" required>
+                </div>
+                <div class="buttons">
+                    <button class="button_primary" type="button" onclick="createDreamdrop()"><img src="./app/icons/icon_light_stars.svg" alt="Add">Erstellen</button>
+                    <button class="button_secondary" type="button"  onclick="togglePopup()">Abbrechen</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

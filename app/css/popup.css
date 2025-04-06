@@ -1,0 +1,88 @@
+.popup-wrapper
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    position: fixed;
+
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+
+    transition: background-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.popup-wrapper.hidden
+{
+    background: transparent;
+    opacity: 0;
+    pointer-events: none;
+}
+
+    .popup-wrapper .popup
+    {
+        background-color: #fff;
+        width: 80%;
+        max-width: 700px;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        transition: transform 0.5s ease-in-out;
+        transform: scale(1);
+    }
+
+        .popup-wrapper.hidden .popup-wrapper
+        {
+            transform: scale(0.4);
+        }
+
+        .popup-wrapper .popup h2
+        {
+            margin-bottom: 0.5rem;
+        }
+
+        .popup-wrapper .popup .description
+        {
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            opacity: 0.5;
+        }
+
+        .popup-wrapper .popup .line
+        {
+            margin-bottom: 1rem;
+        }
+
+            .popup-wrapper .popup .line label
+            {
+                font-size: 0.9rem;
+                display: block;
+                margin-bottom: 0.25rem;
+            }
+
+            .popup-wrapper .popup .line input
+            {
+                width: 100%;
+                padding: 0.5rem;
+                border-radius: 0.25rem;
+                border: 1px solid #9c9c9c;
+                font-size: 0.8rem;
+                font-family: var(--font-primary);
+            }
+
+                .popup-wrapper .popup .line input:focus
+                {
+                    outline: none;
+                    border: 1px solid var(--color-accent);
+                }
+
+        .popup-wrapper .popup .buttons
+        {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
