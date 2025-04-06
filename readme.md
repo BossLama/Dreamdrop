@@ -4,8 +4,10 @@ DreamDrop ist eine kleine, simple Webanwendung, in der man als Gruppe Ideen für
 Es können alle wichtigen Informationen in einem Drop gespeichert werden, die anschließend allen Mitgliedern
 angezeigt werden.
 
+## Gruppen
+Es können verschiedene Gruppen erstellt werden, die eine einzigartige UUID erhalten. Man kann sich mit einem 
+Passwort und UUID anmelden, um die Inhalte der Gruppe zu sehen.
 
-## Upcoming features
-Folgende Features werden umgesetzt:
-- Unterschiedliche Gruppen in einer Anwendung
-- Passwort und Verschlüsselung von Gruppen
+## Datensicherheit
+Alle Daten werden mit dem Gruppenpasswort (welches nur als Hash gespeichert wird), verschlüsselt. Die Daten können
+nur von Personen gelesen werden, die das Passwort kennen.
