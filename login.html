@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreamdrop Login - Urlaubsideen</title>
+    <link rel="icon" href="./app/icons/icon_accent_stars.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./app/css/stylesheet.css">
+    <script src="./app/js/login.js"></script>
+    <!-- OG META -->
+    <meta property="og:title" content="Dreamdrop - Urlaubsideen" />
+    <meta property="og:description" content="Dreamdrop ist eine Plattform, um Urlaubsideen zu teilen und zu entdecken." />
+    <meta property="og:image" content="https://riemerjonas.de/portfolios/dreamdrop/app/images/beach.jpg" />
+    <meta property="og:url" content="https://riemerjonas.de/portfolios/dreamdrop/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dreamdrop" />
+    <meta property="og:locale" content="de_DE" />
+</head>
+<body>
+    <div class="popup-wrapper" id="popup-wrapper-login">
+        <div class="popup">
+            <h2>Dreamdrop beitreten:</h2>
+            <p class="description">
+                Trete einer Dreamdrop-Gruppe bei, die bereits existiert.
+            </p>
+            <form id="form_login">
+                <div class="line">
+                    <label for="uuid">UUID der Gruppe:</label>
+                    <input type="text" id="uuid" name="uuid" placeholder="XXXX-XXXX-XXXX" required>
+                </div>
+                <div class="line">
+                    <label for="password">Passwort:</label>
+                    <input type="password" id="password" name="password" placeholder="**************" required>
+                </div>
+                <div class="buttons">
+                    <button class="button_primary" type="button" onclick="loginGroup()"><img src="./app/icons/icon_light_stars.svg" alt="Add">Anmelden</button>
+                    <button class="button_secondary" type="button"  onclick="togglePopup()">Neue Gruppe</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="popup-wrapper hidden" id="popup-wrapper-create">
+        <div class="popup">
+            <h2>Dreamdrop erstellen:</h2>
+            <p class="description">
+                Erstelle eine neue Dreamdrop-Gruppe, um deine Ideen zu teilen.
+            </p>
+            <form id="form_create">
+                <div class="line">
+                    <label for="password">Passwort:</label>
+                    <input type="password" id="password" name="password" placeholder="**************" required>
+                </div>
+                <div class="buttons">
+                    <button class="button_primary" type="button" onclick="createGroup()"><img src="./app/icons/icon_light_stars.svg" alt="Add">Erstellen</button>
+                    <button class="button_secondary" type="button"  onclick="togglePopup()">Anmelden</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

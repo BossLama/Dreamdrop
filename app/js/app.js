@@ -1,6 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
     console.log("DOM fully loaded and parsed");
     loadDreamdrops();
+
+    isLoggedIn();
+
+    setInterval(() => {
+        isLoggedIn()
+        loadDreamdrops();
+    }, 10000); // 10 seconds
+
+
+    //document.getElementById('btn_create').addEventListener('click',() => createDreamdrop());
+
 });
 
 
@@ -20,14 +31,17 @@ function togglePopup()
 
 function createDreamdrop()
 {
+    console.log("createDreamdrop() called");
     let formdata = new FormData(document.getElementById("form_entry"));
+    console.log(formdata);
     fetch("./app/php/create_dreamdrop.php", {
         method: "POST",
+        
         body: formdata,
     })
     .then((response) => response.text())
     .then((data) => {
-        console.log(data);
+        console.log("Result:", data);
         data = JSON.parse(data);
         if (data.status == "success")
         {
@@ -39,6 +53,20 @@ function createDreamdrop()
             alert("Error: " + data.message);
         }
     })
+    .catch((error) => console.error("Error creating dreamdrop:", error));
+}
+
+function isLoggedIn()
+{
+    fetch('./app/php/is_logged.php')
+    .then((response) => response.json())
+    .then((data) => {
+        if (data.status != "success")
+        {
+            window.location.href = "./login.html";
+            return;
+        }
+    });
 }
 
 function loadDreamdrops()
@@ -46,6 +74,7 @@ function loadDreamdrops()
     fetch("./app/php/get_dreamdrops.php")
     .then((response) => response.json())
     .then((data) => {
+        console.log("Result:", data);
         if(data.status != "success")
         {
             alert("Error: " + data.message);
